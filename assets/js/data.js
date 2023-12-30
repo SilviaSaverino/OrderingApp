@@ -1,14 +1,14 @@
-const menuArray = [
+export const menuArray = [
     {
         name: "Pizza",
-        ingredients: ["pepperoni", "mushrom", "mozarella"],
+        ingredients: ["tomato sauce", "mozarella", "oregano"],
         id: 0,
         price: 14,
         image: "./assets/images/pizza.png",
     },
     {
         name: "Burger",
-        ingredients: ["beef", "cheese", "lettuce"],
+        ingredients: ["beef patty", "tomato", "lettuce", "garlic aioli"],
         price: 12,
         image: "./assets/images/burger.png",
         id: 1
@@ -21,3 +21,4 @@ const menuArray = [
         id: 2
     }
 ]
+
