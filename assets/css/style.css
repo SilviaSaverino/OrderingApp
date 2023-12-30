@@ -35,6 +35,11 @@ button {
     padding: 10px;
 }
 
+i:hover {
+    background-color: #FA9427;
+    color: #232426;  
+}
+
 i {
     max-width: 20px;
     max-height: 20px;
@@ -42,4 +47,39 @@ i {
     border-radius: 50%;
     margin: 0 auto;
     padding: 10px;
+}
+
+/*-----------single item from array----------*/
+#menu{
+    display: flex;
+    flex-direction: column;
+}
+
+.menuItem {
+    max-width: 350px;
+    color:#FA9427;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    margin: 10px;
+    display: flex;  
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.menuItem img {
+    margin: 10px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    padding: 5px;
+}
+
+h2, h4 {
+    margin: 10px;
+}
+
+span {
+    color: #fafafa;
 }
