@@ -15,13 +15,26 @@ function renderMenu(menuArray){
             price,
         } = menuDish
         return `
-        <section class="menuItem">
-            <img src="${image}">
-            <div class="item-info">
-                <h2>${name}<span> £${price}</span></h2>
-                <h4>Ingredients: <span>${ingredients}<span></h4>
+        <section>
+            <div class="menu">
+                <ul class="menu-item-info">
+                    <li>
+                        <img src="${image}">
+                    </li>
+                    <li class="name">
+                        <h2><span>${name}</span></h2>
+                    </li>
+                    <li>
+                        <h2>£${price}</h2>
+                    </li>
+                    <li>
+                        <button id="addToCart-btn"><i class="fa-solid fa-plus"></i></button>
+                    </li>
+                </ul>
+                <p class="ingredients"><span>Ingredients:</span> ${ingredients}</p>
             </div>
         </section>
+        
         `
     }).join('')
    }

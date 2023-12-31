@@ -19,7 +19,7 @@ body {
     margin: 10px auto;
 }
 
-ul {
+nav ul {
     margin: 0 auto;
     list-style: none;
     display:flex;
@@ -49,37 +49,42 @@ i {
     padding: 10px;
 }
 
-/*-----------single item from array----------*/
-#menu{
-    display: flex;
-    flex-direction: column;
-}
-
-.menuItem {
-    max-width: 350px;
-    color:#FA9427;
-    border: 2px solid #fff;
+/*-------------------menu item------------------*/
+.menu {
+    border: 2px solid white;
     border-radius: 10px;
-    margin: 10px;
-    display: flex;  
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
+    margin: 5px;
+    min-height: 105px;
 }
 
-.menuItem img {
-    margin: 10px;
-    width: 100px;
-    height: 100px;
+.menu-item-info {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    margin: 0;
+}
+
+.menu img {
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     border: 2px solid #fff;
     padding: 5px;
 }
 
-h2, h4 {
-    margin: 10px;
+.name {
+    flex: 1; /* Grow to take remaining space */
+    text-align: center;
+}
+
+.ingredients {
+    font-size: smaller;
+    margin: 0 auto;
+    text-align: center;
+    padding-bottom: 10px;
 }
 
 span {
-    color: #fafafa;
+    color:#FA9427;
 }
