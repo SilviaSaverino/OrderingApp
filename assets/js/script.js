@@ -6,22 +6,27 @@ const burgerBtn = document.getElementById("burger-btn")
 const beerBtn = document.getElementById("beer-btn")
 
 /* -------------- event listeners --------------*/
-
 completeMenuBtn.addEventListener("click", function(){
-    document.getElementById('menu').innerHTML = renderCompleteMenu(menuArray)
+    document.getElementById('menu').innerHTML += renderCompleteMenu(menuArray)
 })
 
 pizzaBtn.addEventListener("click", function(){
-    document.getElementById('pizzas').innerHTML = renderPizzas(menuArray)
+    clearMenuSection()
+    document.getElementById('menu').innerHTML += renderPizzas(menuArray)
 })
 
 burgerBtn.addEventListener("click", function(){
-    document.getElementById("burgers").innerHTML = renderBurgers(menuArray)
+    clearMenuSection()
+    document.getElementById("menu").innerHTML += renderBurgers(menuArray)
 })
 
 beerBtn.addEventListener("click", function(){
-    document.getElementById("beers").innerHTML = renderBeers(menuArray)
+    clearMenuSection()
+    document.getElementById("menu").innerHTML += renderBeers(menuArray)
+    
 })
+
+
 /* -------------- functions --------------*/
 
 function renderCompleteMenu(menuArray){
@@ -52,9 +57,13 @@ function renderBeers(menuArray) {
     return getBeer.map(beer => renderMenuItemHtml(beer)).join('');
 }
 
+function clearMenuSection(){
+    document.getElementById("menu").innerHTML = ""
+}
 /* -------------- main function with literals --------------*/
 
 function renderMenuItemHtml({ name, ingredients, image, price }) {
+
     return `
         <section>
             <div class="menu">

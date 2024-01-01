@@ -2,21 +2,21 @@ export const menuArray = [
     {
         name: "Pizza Margherita",
         ingredients: ["tomato sauce", "mozarella", "oregano",],
-        id: 0,
+        id: 1,
         price: 14,
         image: "./assets/images/pizza.png",
     },
     {
         name: "Pizza tuna & onion",
         ingredients: ["tomato sauce", "mozarella", "oregano", "tuna", "onions"],
-        id: 0,
+        id: 2,
         price: 14,
         image: "./assets/images/pizza.png",
     },
     {
         name: "Pizza salsiccia & friarelli",
         ingredients: ["mozarella", "oregano","sausage","friarelli"],
-        id: 0,
+        id: 3,
         price: 14,
         image: "./assets/images/pizza.png",
     },
@@ -25,28 +25,28 @@ export const menuArray = [
         ingredients: ["beef patty", "tomato", "lettuce", "garlic aioli"],
         price: 12,
         image: "./assets/images/burger.png",
-        id: 1
+        id: 4
     },
     {
         name: "Chicken burger",
         ingredients: ["chicken patty", "tomato", "lettuce", "garlic aioli"],
         price: 12,
         image: "./assets/images/burger.png",
-        id: 1
+        id: 5
     },
     {
         name: "Veggie burger",
         ingredients: ["vegan patty", "tomato", "lettuce", "garlic aioli"],
         price: 12,
         image: "./assets/images/burger.png",
-        id: 1
+        id: 6
     },
         {
         name: "Beer",
         ingredients: ["grain", "hops", "yeast", "water"],
         price: 12,
         image: "./assets/images/beer.png",
-        id: 2
+        id: 7
     }
 ]
 
