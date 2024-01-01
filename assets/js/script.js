@@ -1,16 +1,58 @@
 import { menuArray } from "./data.js"
 
-const pizzaBtn = document.getElementById("pizza-btn")
 const completeMenuBtn = document.getElementById("complete-menu-btn")
+const pizzaBtn = document.getElementById("pizza-btn")
+const burgerBtn = document.getElementById("burger-btn")
+const beerBtn = document.getElementById("beer-btn")
+
+/* -------------- event listeners --------------*/
 
 completeMenuBtn.addEventListener("click", function(){
-    document.getElementById('menu').innerHTML = renderMenu(menuArray)
+    document.getElementById('menu').innerHTML = renderCompleteMenu(menuArray)
 })
 
 pizzaBtn.addEventListener("click", function(){
     document.getElementById('pizzas').innerHTML = renderPizzas(menuArray)
 })
 
+burgerBtn.addEventListener("click", function(){
+    document.getElementById("burgers").innerHTML = renderBurgers(menuArray)
+})
+
+beerBtn.addEventListener("click", function(){
+    document.getElementById("beers").innerHTML = renderBeers(menuArray)
+})
+/* -------------- functions --------------*/
+
+function renderCompleteMenu(menuArray){
+    return menuArray.map(menuDish => renderMenuItemHtml(menuDish)).join('');
+   }
+
+function renderPizzas(menuArray) {
+    const getPizza = menuArray.filter(function(dish) {
+        return dish.name.includes("Pizza");
+    });
+
+    return getPizza.map(pizza => renderMenuItemHtml(pizza)).join('');
+}
+
+function renderBurgers(menuArray) {
+    const getBurger = menuArray.filter(function(burgerDish) {
+        return burgerDish.name.includes("burger");
+    });
+
+    return getBurger.map(burger => renderMenuItemHtml(burger)).join('');
+}
+
+function renderBeers(menuArray) {
+    const getBeer = menuArray.filter(function(beer) {
+        return beer.name.includes("Beer");
+    });
+
+    return getBeer.map(beer => renderMenuItemHtml(beer)).join('');
+}
+
+/* -------------- main function with literals --------------*/
 
 function renderMenuItemHtml({ name, ingredients, image, price }) {
     return `
@@ -36,17 +78,7 @@ function renderMenuItemHtml({ name, ingredients, image, price }) {
     `;
 }
 
-function renderMenu(menuArray){
-    return menuArray.map(menuDish => renderMenuItemHtml(menuDish)).join('');
-   }
 
-function renderPizzas(menuArray) {
-    const getPizza = menuArray.filter(function (dish) {
-        return dish.name.includes("Pizza");
-    });
-
-    return getPizza.map(pizza => renderMenuItemHtml(pizza)).join('');
-}
 
 
    
