@@ -42,11 +42,25 @@ export const menuArray = [
         id: 6
     },
         {
-        name: "Beer",
+        name: "Stout beer",
         ingredients: ["grain", "hops", "yeast", "water"],
         price: 12,
         image: "./assets/images/beer.png",
         id: 7
+    },
+    {
+        name: "IPA beer",
+        ingredients: ["grain", "hops", "yeast", "water"],
+        price: 12,
+        image: "./assets/images/beer.png",
+        id: 8
+    },
+    {
+        name: "Wheat beer",
+        ingredients: ["grain", "hops", "yeast", "water"],
+        price: 12,
+        image: "./assets/images/beer.png",
+        id: 9
     }
 ]
 

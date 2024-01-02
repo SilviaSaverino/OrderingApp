@@ -10,8 +10,9 @@
 </head>
 
 <body>
-    <div class="container">
+    <main class="container">
         <header>
+            <h1>Brew <span>&</span> Bistro</h1>
             <img class="heroImg" src="./assets/images/hero.png">
             <nav>
                 <ul>
@@ -38,13 +39,36 @@
                 </ul>
             </nav>
         </header>
-        <section id="menu">
-            <section id="pizzas" ></section>
-            <section id="burgers"></section>
-            <section id="beers"></section>
-        </section>
         
-    </div>
+        <section id="menu-section">
+            <div id="pizzas" ></div>
+            <div id="burgers"></div>
+            <div id="beers"></div>
+        </section>
+
+        <section id="user-order">
+            <div id="intro">
+                <p>Select delicious dishes from our menu!</p>
+            </div>
+            <div>
+                <button id="your-order-btn">Your order</button>
+            </div>
+        </section>
+
+        <section id="render-order">
+            <p>this is the render order section</p>
+        </section>
+
+        <section id="modal">
+            <div id="modal-inner">
+                <p>this is the modal div</p>
+            </div>
+        </section>
+    </main>
+    
+   
+   
+    
 
 </body>
 <script type="module" src="./assets/js/script.js"></script>

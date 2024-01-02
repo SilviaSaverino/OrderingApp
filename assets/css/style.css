@@ -1,8 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Alegreya:ital@1&display=swap');
+
 body {
-    margin: 0;
     padding: 10px;
-    /* background: #FCC582; */
     color: #fafafa;
+    font-family: 'Alegreya', serif;
+    margin: 0;
+}
+
+h2 {
+    margin: 0 5px;
+}
+
+h1 {
+    text-align:center; 
+    margin-top: 0;
+    border-bottom: 2px solid white;
 }
 
 .container {
@@ -16,7 +28,7 @@ body {
 
 .heroImg{
     width: 100%;
-    margin: 10px auto;
+    border-radius: 10px;
 }
 
 nav ul {
@@ -35,7 +47,7 @@ button {
     padding: 10px;
 }
 
-i:hover {
+i:hover, .add-to-cart-btn:hover{
     background-color: #FA9427;
     color: #232426;  
 }
@@ -43,7 +55,7 @@ i:hover {
 i {
     max-width: 20px;
     max-height: 20px;
-    border: 3px solid #fff;
+    border: 2px solid #fff;
     border-radius: 50%;
     margin: 0 auto;
     padding: 10px;
@@ -61,7 +73,7 @@ i {
     list-style: none;
     display: flex;
     align-items: center;
-    padding: 5px;
+    padding: 10px;
     margin: 0;
 }
 
@@ -87,4 +99,45 @@ i {
 
 span {
     color:#FA9427;
+}
+
+.add-to-cart-btn {
+    font-size: 30px;
+    border: 2px solid white;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    margin: 20px 0 20px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ---------------- user Order section ---------------- */
+
+#user-order{
+    text-align: center;
+    padding: 5px;
+}
+
+#intro {
+    padding: 10px;
+ }
+
+#your-order-btn {
+    border: 1px solid #232426;
+    border-radius: 5px;
+    margin: 0px auto;
+    width: 100%;
+    color: #232426;
+    background-color: #FA9427;
+}
+
+#your-order-btn:hover{
+   color: white;
+   border: 1px solid white;
+}
+
+.hide {
+    display: none;
 }
