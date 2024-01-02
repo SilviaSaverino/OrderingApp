@@ -130,20 +130,18 @@ yourOrderBtn.addEventListener("click", function () {
         selectedDishes.forEach(selectedDish => {
             const menuDetailsDiv = document.createElement('div');
             menuDetailsDiv.innerHTML = `
-                <div class="menu">
-                    <ul class="menu-item-info">
-                        <li>
-                            <img src="${selectedDish.image}">
-                        </li>
-                        <li class="name">
-                            <h2><span>${selectedDish.name}</span></h2>
-                        </li>
-                        <li>
-                            <h2>£${selectedDish.price}</h2>
-                        </li>
-                    </ul>
-                </div>
+               
+            <ul class="order-item-info">
+                <li>
+                    <h3><span>${selectedDish.name}</span></h3>
+                </li>
+                <li>
+                    <h3 class="selected-dish-price">£${selectedDish.price}</h3>
+                </li>
+            </ul>
+       
             `;
+            clearMenuSection()
             renderOrderSection.appendChild(menuDetailsDiv);
         });
     } else {
