@@ -153,6 +153,9 @@ function renderOrderHtml(selectedDishes){
                
             <ul class="order-item-info">
                 <li>
+                <li>
+                    <button id="remove-item-btn" class="remove-item-btn"><i class="fa-solid fa-trash-can"></i></button>
+                </li>
                     <h3><span>${selectedDish.name}</span></h3>
                 </li>
                 <li>
@@ -178,4 +181,20 @@ function renderTotalPrice(){
     totalAmount.innerHTML = `
     <span>Total:</span> £${totalPrice}
     ` 
+}
+
+
+renderOrderSection.addEventListener('click', function (event) {
+    if (event.target && (event.target.id === 'remove-item-btn' || event.target.parentNode.id === 'remove-item-btn')) {
+        handleRemoveItemButtonClick(event);
+    }
+});
+
+function handleRemoveItemButtonClick(event) {
+    const clickedButton = event.target;
+
+    const menuDetailsDiv = clickedButton.closest('.order-item-info');
+    if (menuDetailsDiv) {
+        menuDetailsDiv.remove();
+    }
 }

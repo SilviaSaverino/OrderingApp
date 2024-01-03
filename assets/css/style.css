@@ -60,7 +60,7 @@ i:hover, .add-to-cart-btn:hover{
     color: #232426;  
 }
 
-i {
+nav i {
     max-width: 20px;
     max-height: 20px;
     border: 2px solid #fff;
@@ -205,6 +205,10 @@ span {
     margin: 0;
 }
 
+.remove-item-btn:hover{
+    color: white;
+}
+
 #total {
     text-align: right;
     margin: 10px;
@@ -218,7 +222,7 @@ span {
            
 #checkout-div {
     margin: 5px;
-    
+    margin-top: auto;
 }
 
 .checkout-btn {
@@ -237,6 +241,3 @@ span {
     overflow-y: auto;
 }
 
-#checkout-div {
-    margin-top: auto;
-}
