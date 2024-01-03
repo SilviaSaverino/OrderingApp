@@ -14,7 +14,11 @@ const renderOrderSection = document.getElementById("render-order")
 
 /* MODAL SECTION */
 const modalSection = document.getElementById("modal")
+const modalCloseBtn = document.getElementById("modal-close-btn")
 
+modalCloseBtn.addEventListener("click", function(){
+    modalSection.classList.add("hide")
+})
 
 /* -------------- NAV event listeners --------------*/
 completeMenuBtn.addEventListener("click", function () {
@@ -124,6 +128,7 @@ function handleMenuClick(e) {
 }
 
 yourOrderBtn.addEventListener("click", function () {
+    modalSection.classList.remove("hide")
     renderOrderSection.innerHTML = "";
 
     if (selectedDishes.length > 0) {
@@ -141,8 +146,9 @@ yourOrderBtn.addEventListener("click", function () {
             </ul>
        
             `;
-            clearMenuSection()
+            
             renderOrderSection.appendChild(menuDetailsDiv);
+            
         });
     } else {
         renderOrderSection.innerHTML = "<p>THIS WILL BE A POP UP No items in your order.</p>";

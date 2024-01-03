@@ -5,6 +5,7 @@ body {
     color: #fafafa;
     font-family: 'Alegreya', serif;
     margin: 0;
+    
 }
 
 h2 {
@@ -21,10 +22,12 @@ h1 {
 .container {
     background-color: #232426; 
     max-width: 350px;
+    max-height: 600px;
     margin: 0 auto;
     padding: 20px 10px ;
     border: 3px solid #FA9427;
     border-radius: 10px;
+    overflow-y:auto;
 }
 
 .heroImg{
@@ -67,10 +70,12 @@ i {
     border: 2px solid white;
     border-radius: 10px;
     margin: 5px;
+    
 }
 
 .menu {
     min-height: 105px;
+    
 }
 
 .menu-item-info {
@@ -100,7 +105,6 @@ i {
 h3 {
     margin: 10px;
 }
-
 
 .name {
     flex: 1; /* Grow to take remaining space */
@@ -158,3 +162,36 @@ span {
 .hide {
     display: none;
 }
+
+
+#modal {
+    border: 2px solid #FA9427; 
+    position: absolute;
+    top: 32%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 400px;
+    max-width: 350px;
+    width: 250px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 6px 2px #666;
+    background-color: #212529;
+    color: whitesmoke;
+}
+
+.close-modal-btn-container {
+    margin: 10px;
+    display: flex;
+    justify-content: right;
+}
+
+.close-modal-btn-container h2 {
+   margin: 0 auto;
+}
+
+.modal-close-btn {
+    border: 1px solid white;
+    border-radius:  5px;
+    margin: 0;
+}
+
