@@ -163,7 +163,6 @@ span {
     display: none;
 }
 
-
 #modal {
     border: 2px solid #FA9427; 
     position: absolute;
@@ -195,3 +194,7 @@ span {
     margin: 0;
 }
 
+#total {
+    text-align: right;
+    margin: 10px;
+}

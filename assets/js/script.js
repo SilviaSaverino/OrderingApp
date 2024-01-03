@@ -15,6 +15,11 @@ const renderOrderSection = document.getElementById("render-order")
 /* MODAL SECTION */
 const modalSection = document.getElementById("modal")
 const modalCloseBtn = document.getElementById("modal-close-btn")
+const totalAmount = document.getElementById("total")
+
+function getTotalAmount(){
+
+}
 
 modalCloseBtn.addEventListener("click", function(){
     modalSection.classList.add("hide")
@@ -120,17 +125,27 @@ function handleMenuClick(e) {
     if (e.target.classList.contains('add-to-cart-btn')) {
         const dishId = parseInt(e.target.id);
         const selectedDish = menuArray.find(dish => dish.id === dishId);
-
+        
         if (selectedDish) {
             selectedDishes.push(selectedDish);
         }
     }
+    
 }
 
 yourOrderBtn.addEventListener("click", function () {
-    modalSection.classList.remove("hide")
-    renderOrderSection.innerHTML = "";
+    getPrice(selectedDishes)
+    renderOrderHtml(selectedDishes)
+});
 
+function getPrice(selectedDishes){
+    const totalPrice = selectedDishes.reduce((sum, selectedDish) => sum + selectedDish.price, 0)     
+    console.log(totalPrice)
+}
+
+function renderOrderHtml(selectedDishes){
+    modalSection.classList.remove("hide")
+    renderOrderSection.innerHTML = ""
     if (selectedDishes.length > 0) {
         selectedDishes.forEach(selectedDish => {
             const menuDetailsDiv = document.createElement('div');
@@ -148,10 +163,10 @@ yourOrderBtn.addEventListener("click", function () {
             `;
             
             renderOrderSection.appendChild(menuDetailsDiv);
+
             
         });
     } else {
-        renderOrderSection.innerHTML = "<p>THIS WILL BE A POP UP No items in your order.</p>";
+        renderOrderSection.innerHTML = "<p>No items in your order.</p>";
     }
-});
-
+}
