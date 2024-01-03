@@ -30,6 +30,10 @@ h1 {
     overflow-y:auto;
 }
 
+.blur-effect {
+    filter: blur(3px);
+}
+
 .heroImg{
     width: 100%;
     border-radius: 10px;
@@ -152,6 +156,7 @@ span {
     width: 100%;
     color: #232426;
     background-color: #FA9427;
+    font-family: 'Alegreya', serif;;
 }
 
 #your-order-btn:hover{
@@ -159,9 +164,15 @@ span {
    border: 1px solid white;
 }
 
+.no-items {
+    text-align: center;
+}
+
 .hide {
     display: none;
 }
+
+/*Order modal*/
 
 #modal {
     border: 2px solid #FA9427; 
@@ -197,4 +208,9 @@ span {
 #total {
     text-align: right;
     margin: 10px;
+    padding: 5px;
+}
+
+#total span {
+    margin-right: 10px;
 }

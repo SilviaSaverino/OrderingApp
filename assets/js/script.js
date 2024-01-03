@@ -1,5 +1,8 @@
 import { menuArray } from "./data.js"
 
+/* MAIN CONTAINER */
+const mainContainer = document.getElementById("main-container")
+
 /* MENU SECTION */
 const completeMenuBtn = document.getElementById("complete-menu-btn")
 const pizzaBtn = document.getElementById("pizza-btn")
@@ -42,6 +45,7 @@ yourOrderBtn.addEventListener("click", function () {
 /* -------------- Modal event listeners --------------*/
 modalCloseBtn.addEventListener("click", function(){
     modalSection.classList.add("hide")
+    mainContainer.classList.remove("blur-effect")
 })
 
 /* -------------- functions --------------*/
@@ -140,6 +144,7 @@ function handleMenuClick(e) {
 
 function renderOrderHtml(selectedDishes){
     modalSection.classList.remove("hide")
+    mainContainer.classList.add("blur-effect")
     renderOrderSection.innerHTML = ""
     if (selectedDishes.length > 0) {
         selectedDishes.forEach(selectedDish => {
@@ -160,7 +165,7 @@ function renderOrderHtml(selectedDishes){
             renderOrderSection.appendChild(menuDetailsDiv);
         });
     } else {
-        renderOrderSection.innerHTML = "<p>No items in your order.</p>";
+        renderOrderSection.innerHTML = '<p class="no-items">There are no items in your order, yet...</p>';
     }
 }
 
