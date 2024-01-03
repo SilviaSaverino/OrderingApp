@@ -17,10 +17,6 @@ const modalSection = document.getElementById("modal")
 const modalCloseBtn = document.getElementById("modal-close-btn")
 const totalAmount = document.getElementById("total")
 
-function getTotalAmount(){
-
-}
-
 modalCloseBtn.addEventListener("click", function(){
     modalSection.classList.add("hide")
 })
@@ -134,14 +130,9 @@ function handleMenuClick(e) {
 }
 
 yourOrderBtn.addEventListener("click", function () {
-    getPrice(selectedDishes)
     renderOrderHtml(selectedDishes)
+    renderTotalPrice()
 });
-
-function getPrice(selectedDishes){
-    const totalPrice = selectedDishes.reduce((sum, selectedDish) => sum + selectedDish.price, 0)     
-    console.log(totalPrice)
-}
 
 function renderOrderHtml(selectedDishes){
     modalSection.classList.remove("hide")
@@ -163,10 +154,20 @@ function renderOrderHtml(selectedDishes){
             `;
             
             renderOrderSection.appendChild(menuDetailsDiv);
-
-            
         });
     } else {
         renderOrderSection.innerHTML = "<p>No items in your order.</p>";
     }
+}
+
+function getPrice(selectedDishes){
+    return selectedDishes.reduce((sum, selectedDish) => sum + selectedDish.price, 0)     
+}
+
+function renderTotalPrice(){
+    const totalPrice = getPrice(selectedDishes)
+    totalAmount.innerHTML = `
+    <span>Total:</span> £${totalPrice}
+    `
+    
 }
