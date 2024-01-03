@@ -180,7 +180,7 @@ function getPrice(selectedDishes){
 function renderTotalPrice(){
     const totalPrice = getPrice(selectedDishes)
     totalAmount.innerHTML = `
-    <span>Total:</span> £${totalPrice}
+    <span>Total:</span> £${totalPrice.toFixed(2)}
     ` 
 }
 
