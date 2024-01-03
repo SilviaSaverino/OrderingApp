@@ -133,12 +133,13 @@ menuSectionParent.addEventListener("click", handleMenuClick);
 
 function handleMenuClick(e) {
     if (e.target.classList.contains('add-to-cart-btn')) {
-        const dishId = parseInt(e.target.id);
-        const selectedDish = menuArray.find(dish => dish.id === dishId);
+        const dishId = parseInt(e.target.id)
+        const selectedDish = menuArray.find(dish => dish.id === dishId)
         
         if (selectedDish) {
             selectedDishes.push(selectedDish);
         }
+        
     }   
 }
 
@@ -168,7 +169,7 @@ function renderOrderHtml(selectedDishes){
             renderOrderSection.appendChild(menuDetailsDiv);
         });
     } else {
-        renderOrderSection.innerHTML = '<p class="no-items">There are no items in your order, yet...</p>';
+        renderOrderSection.innerHTML = '<p class="no-items">There are no items in your order, yet...</p>'
     }
 }
 
@@ -186,15 +187,31 @@ function renderTotalPrice(){
 
 renderOrderSection.addEventListener('click', function (event) {
     if (event.target && (event.target.id === 'remove-item-btn' || event.target.parentNode.id === 'remove-item-btn')) {
-        handleRemoveItemButtonClick(event);
+        handleRemoveItemButtonClick(event)
     }
 });
 
 function handleRemoveItemButtonClick(event) {
     const clickedButton = event.target;
-
     const menuDetailsDiv = clickedButton.closest('.order-item-info');
+
     if (menuDetailsDiv) {
-        menuDetailsDiv.remove();
+        // Trova l'indice dell'elemento nell'array selectedDishes
+        const indexToRemove = Array.from(menuDetailsDiv.parentNode.children).indexOf(menuDetailsDiv)
+
+        // Rimuovi l'elemento dall'array se l'indice è valido
+        if (indexToRemove !== -1) {
+            const removedDish = selectedDishes[indexToRemove]
+            selectedDishes.splice(indexToRemove, 1)
+
+            // Rimuovi l'elemento dal DOM
+            menuDetailsDiv.remove()
+
+            // Calcola e renderizza il nuovo prezzo totale
+            const newTotalPrice = getPrice(selectedDishes)
+            totalAmount.innerHTML = `<span>Total:</span> £${newTotalPrice.toFixed(2)}`
+
+            console.log("Selected Dishes after removal:", selectedDishes)
+        }
     }
 }
