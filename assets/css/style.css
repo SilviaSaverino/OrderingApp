@@ -149,7 +149,7 @@ span {
     padding: 10px;
  }
 
-#your-order-btn {
+.your-order-btn, .checkout-btn {
     border: 1px solid #232426;
     border-radius: 5px;
     margin: 0px auto;
@@ -159,7 +159,7 @@ span {
     font-family: 'Alegreya', serif;;
 }
 
-#your-order-btn:hover{
+.your-order-btn:hover, .checkout-btn:hover{
    color: white;
    border: 1px solid white;
 }
@@ -213,4 +213,30 @@ span {
 
 #total span {
     margin-right: 10px;
+}
+
+           
+#checkout-div {
+    margin: 5px;
+    
+}
+
+.checkout-btn {
+    margin: 5px auto;
+    width: 100%;
+}
+
+#modal-inner {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.order {
+    max-height: 180px;
+    overflow-y: auto;
+}
+
+#checkout-div {
+    margin-top: auto;
 }
