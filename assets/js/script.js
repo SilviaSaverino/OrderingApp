@@ -17,39 +17,53 @@ const modalSection = document.getElementById("modal")
 const modalCloseBtn = document.getElementById("modal-close-btn")
 const totalAmount = document.getElementById("total")
 
+
+
+/* -------------- NAV event listeners --------------*/
+completeMenuBtn.addEventListener("click", function () {
+    handleNavBarMenuClick(completeMenuBtn);
+});
+pizzaBtn.addEventListener("click", function () {
+    handleNavBarMenuClick(pizzaBtn);
+});
+burgerBtn.addEventListener("click", function () {
+    handleNavBarMenuClick(burgerBtn);
+});
+beerBtn.addEventListener("click", function () {
+    handleNavBarMenuClick(beerBtn);
+});
+
+/* -------------- Order button event listeners --------------*/
+yourOrderBtn.addEventListener("click", function () {
+    renderOrderHtml(selectedDishes)
+    renderTotalPrice()
+});
+
+/* -------------- Modal event listeners --------------*/
 modalCloseBtn.addEventListener("click", function(){
     modalSection.classList.add("hide")
 })
 
-/* -------------- NAV event listeners --------------*/
-completeMenuBtn.addEventListener("click", function () {
-    clearMenuSection()
-    menuSectionParent.innerHTML += renderCompleteMenu(menuArray)
-    introParagraph.classList.add("hide")
-})
-
-pizzaBtn.addEventListener("click", function () {
-    clearMenuSection()
-    menuSectionParent.innerHTML += renderPizzas(menuArray)
-    introParagraph.classList.add("hide")
-})
-
-burgerBtn.addEventListener("click", function () {
-    clearMenuSection()
-    menuSectionParent.innerHTML += renderBurgers(menuArray)
-    introParagraph.classList.add("hide")
-})
-
-beerBtn.addEventListener("click", function () {
-    clearMenuSection()
-    menuSectionParent.innerHTML += renderBeers(menuArray)
-    introParagraph.classList.add("hide")
-
-})
-
-
 /* -------------- functions --------------*/
+function handleNavBarMenuClick(btn){
+    clearMenuSection();
 
+    if (btn === completeMenuBtn){
+        menuSectionParent.innerHTML += renderCompleteMenu(menuArray)
+    } else if (btn === pizzaBtn){
+        menuSectionParent.innerHTML += renderPizzas(menuArray)
+    } else if (btn === burgerBtn) {
+        menuSectionParent.innerHTML += renderBurgers(menuArray)
+    } else if (btn === beerBtn) {
+        menuSectionParent.innerHTML += renderBeers(menuArray)
+    }
+
+    introParagraph.classList.add("hide")
+}
+
+function clearMenuSection() {
+    document.getElementById("menu-section").innerHTML = ""
+}
 
 function renderCompleteMenu(menuArray) {
     return menuArray.map(menuDish => renderMenuItemHtml(menuDish)).join('');
@@ -77,10 +91,6 @@ function renderBeers(menuArray) {
     });
 
     return getBeer.map(beer => renderMenuItemHtml(beer)).join('');
-}
-
-function clearMenuSection() {
-    document.getElementById("menu-section").innerHTML = ""
 }
 
 /* -------------- main function rendering menu --------------*/
@@ -111,7 +121,7 @@ function renderMenuItemHtml(menuDish) {
     `;
 }
 
-/* -------------- function for rendering orders --------------*/
+/* -------------- functions for rendering orders --------------*/
 
 let selectedDishes = [];
 
@@ -125,14 +135,8 @@ function handleMenuClick(e) {
         if (selectedDish) {
             selectedDishes.push(selectedDish);
         }
-    }
-    
+    }   
 }
-
-yourOrderBtn.addEventListener("click", function () {
-    renderOrderHtml(selectedDishes)
-    renderTotalPrice()
-});
 
 function renderOrderHtml(selectedDishes){
     modalSection.classList.remove("hide")
@@ -168,6 +172,5 @@ function renderTotalPrice(){
     const totalPrice = getPrice(selectedDishes)
     totalAmount.innerHTML = `
     <span>Total:</span> £${totalPrice}
-    `
-    
+    ` 
 }
